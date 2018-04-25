@@ -40,6 +40,14 @@ Important thing, however, is **not to push** these temporary changes (`fit`,
 * Then add the same line in `tsconfig.json` in `include:` section
 * now run test again, you will have to resolve all main test
 
+## Update
+We may update tests, to apply them fetch and merge the master branch back to
+your branch.
+
+```sh
+git merge pull push branch checkout origin master stash pop
+```
+
 ## progress
 
 In the beginning, most of the tests are failing:
