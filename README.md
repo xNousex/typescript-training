@@ -13,11 +13,11 @@ Run:
 
 single run (compile & test once, useful for CI):
 
-    npm test -- --single-run
+    npm test
 
 development run (compile & test initially + for each file change, useful for development):
 
-    npm test
+    npm test -- --watchAll
 
 ## running single tests
 
@@ -38,10 +38,11 @@ Important thing, however, is **not to push** these temporary changes (`fit`,
 
 ## Run only group of tests
 
-* First remove `'src/main/*.ts'` from `excludes:` section in `karma.comf.ts`
-* Then add the same line in `tsconfig.json` in `include:` section
-* now run test again, you will have to resolve all main test
-
+* Remove `'/src/main/'` from `testPathIgnorePatterns:` section in `jest.config.js` for running only tests inside `'/src/main/'`
+* Remove `'/src/datatypes/'` from `testPathIgnorePatterns:` section in `jest.config.js` for running only tests inside `'/src/datatypes/'`
+* Remove `'/src/params/'` from `testPathIgnorePatterns:` section in `jest.config.js` for running only tests inside `'/src/params/'`
+* Remove `'/src/functions/'` from `testPathIgnorePatterns:` section in `jest.config.js` for running only tests inside `'/src/functions/'`
+* Remove `'/src/promises/'` from `testPathIgnorePatterns:` section in `jest.config.js` for running only tests inside `'/src/promises/'`
 ## Update
 We may update tests, to apply them fetch and merge the master branch back to
 your branch.
