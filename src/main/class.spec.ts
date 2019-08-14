@@ -1,10 +1,17 @@
+import { Tracing } from "trace_events";
+
 describe('class', () => {
 
   it('has a constructor for initialization', () => {
     // Create a Musician class
     // Add a constructor that takes one param, the instrument.
     // Set this.instrument to the instrument passed in
-
+    class Musician {
+      public instrument : string;
+      constructor(instrument : string ='') {
+        this.instrument = instrument;
+      }
+    }
     const musician = new Musician()
     const ringo = new Musician('drums')
 
@@ -15,7 +22,12 @@ describe('class', () => {
   it('constructor can have default param values', () => {
     // Create a Musician class with a constructor
     // Make your class default (using default params) the instrument to 'guitar'
-
+    class Musician {
+      public instrument : string;
+      constructor(instrument : string ='guitar') {
+        this.instrument = instrument;
+      }
+    }
     const john = new Musician()
     const ringo = new Musician('drums')
 
@@ -26,7 +38,15 @@ describe('class', () => {
   it('can have instance methods', () => {
     // Create a Musician class, pass in the instrument to the constructor,
     // and add a play function to the class definition
-
+    class Musician {
+      public instrument : string;
+      constructor(instrument : string ='guitar') {
+        this.instrument = instrument;
+      }
+       play():string{
+        return("I'm playing drums");
+      }
+    }
     const musician = new Musician()
 
     expect(musician.play).toBeDefined()
